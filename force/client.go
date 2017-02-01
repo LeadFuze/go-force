@@ -80,6 +80,7 @@ func (forceApi *ForceApi) request(method, path string, params url.Values, payloa
 	}
 
 	// Add Headers
+	req.Header.Set("Sforce-Auto-Assign", "FALSE")
 	req.Header.Set("User-Agent", userAgent)
 	req.Header.Set("Content-Type", contentType)
 	req.Header.Set("Accept", responseType)
